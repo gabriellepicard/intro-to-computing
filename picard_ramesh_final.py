@@ -144,7 +144,7 @@ def main():
     #CALL OPEN_FILE
     fp = open_file()
     
-    #CALL READ_FILE
+    #CALL READ_DATA
     D = read_data(fp)
     
     # ASK TO ENTER WORDS TO CHECK FOR CO-OCCURENCE
