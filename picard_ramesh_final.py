@@ -14,7 +14,7 @@ def open_file():
     return fp
     
 # Function to read the file object
-def read_file(fp):
+def read_data(fp):
         
     # IMPORT STRING MODULE FOR LATER
     import string
@@ -116,7 +116,7 @@ def find_cooccurance(D, inp_str):
         # CONVERT VALUES IN D INTO SET TO USE FOR INTERSECTION
         D_2 = set(D)
         
-        # CREATE LIST OF LINE NUMBERS THAT INCLUDES BOT set2 & D_2
+        # CREATE LIST OF LINE NUMBERS THAT INCLUDES BOTH set2 & D_2
         Int = set2 & D_2
         line_num = []
         for word in D_2:
@@ -144,8 +144,8 @@ def main():
     #CALL OPEN_FILE
     fp = open_file()
     
-    #CALL READ_DATA
-    D = read_file(fp)
+    #CALL READ_FILE
+    D = read_data(fp)
     
     # ASK TO ENTER WORDS TO CHECK FOR CO-OCCURENCE
     inp_str = input('Enter space separated words: ')
