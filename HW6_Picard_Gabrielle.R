@@ -38,9 +38,9 @@ barplot(y, names.arg = x, main="Salaries", xlab="Name", ylab="Salary")
 # PLOT A PIE CHART
 
 # Calculate max, min, median
-a <- max(Data_Frame$salary)
-b <- min(Data_Frame$salary)
-c <- median(Data_Frame$salary)
+max(Data_Frame$salary)
+min(Data_Frame$salary)
+median(Data_Frame$salary)
 
 # Create a vector of labels
 mylabel <- c("Maximum", "Minimum", "Median")
@@ -53,3 +53,58 @@ x <- c(max(Data_Frame$salary), min(Data_Frame$salary), median(Data_Frame$salary)
 
 # Display pie chart
 pie(x, label = mylabel, main = "Descriptive Statistics - Salaries", col = colors)
+
+# QUESTION 3
+
+# for loop in R
+
+# Set up a function
+list_process <- function(x) {
+  
+  # Create empty list
+  new_list <- list();
+  
+  # Add for loop to process each element of the list
+  for (word in x) {
+    
+    # Step 1: lowercase each element of list
+    word2 <- tolower(word)
+    print(paste("Step 1:", word2))
+    
+    # Step 2: remove punctuation from each element of list
+    word3 <- gsub("[[:punct:]]+","",word2)
+    print(paste("Step 2:", word3))
+  }
+}
+
+# Test for loop function
+list_process(list("fiNals", "Exams!", "todAY", "Oh NO"))
+list_process(list("WiLL", "i.", "finish?", "this", "ASSIGNMENT"))
+list_process(list("YES!", "I WiLL.", "SURELY?", "Complete", "The", "Assignment"))
+
+# if else in R
+
+# Set up a function
+list_process2 <- function(x) {
+ 
+  # Use for loop to iterate through the list
+  for (word in x) {
+    # Set up if statement so that the list stops iterating at q or Q
+    if (word == "q") {
+      print("Thank you! That's all.")
+      break
+    }
+    else if (word == 'Q') {
+      print("Thank you! That's all.")
+      break
+    }
+    else {
+      print(word)
+    }
+  }
+}
+
+# Test if else statement
+list_process2(list("q", "finals", "exams"))
+list_process2(list("finals", "exams", "q"))
+list_process2(list("finals", "Q", "exams"))
