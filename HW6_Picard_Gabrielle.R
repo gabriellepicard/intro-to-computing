@@ -24,10 +24,32 @@ DF_new <- cbind(Data_Frame, department = c('Accounting', 'Intern', 'HR', 'IT', '
 # Extract row 1,3,5 with column 2,3
 DF_new2 <- Data_Frame[-c(2,4), -c(1,4)]
 
-# Plot row 1,4,5 and label with corresponding names
+# PLOT ROW 1,4,5 AND LABEL WITH CORRESPONDING NAMES
 
-#x-axis
-x <- c(Data_Frame[(1,4,5), 2]
+# Set x-axis
+x <- Data_Frame[-c(2,3), -c(1,3)]
 
-#y-axis
-y <- c(Data_Frame[(1,4,5), ])
+# Set y-axis
+y <- Data_Frame[-c(2,3), -c(1,2)]
+
+# Plot barplot
+barplot(y, names.arg = x, main="Salaries", xlab="Name", ylab="Salary")
+
+# PLOT A PIE CHART
+
+# Calculate max, min, median
+a <- max(Data_Frame$salary)
+b <- min(Data_Frame$salary)
+c <- median(Data_Frame$salary)
+
+# Create a vector of labels
+mylabel <- c("Maximum", "Minimum", "Median")
+
+# Create a vector of colors
+colors <- c("deepskyblue", "coral", "darkviolet")
+
+# Create a vector of values using variables
+x <- c(max(Data_Frame$salary), min(Data_Frame$salary), median(Data_Frame$salary))
+
+# Display pie chart
+pie(x, label = mylabel, main = "Descriptive Statistics - Salaries", col = colors)
